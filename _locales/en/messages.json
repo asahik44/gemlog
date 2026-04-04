@@ -1,0 +1,74 @@
+{
+  "extensionName": { "message": "GemLog" },
+  "extensionDescription": { "message": "Automatically log, manage, and extract Gemini chat history in Markdown/JSON." },
+  
+  "tabChats": { "message": "Chats" },
+  "tabDetail": { "message": "Details" },
+  "tabSettings": { "message": "Settings" },
+  
+  "storageUsageLabel": { "message": "Storage Usage" },
+  "currentChatLabel": { "message": "Current Chat" },
+  "noChatsMessage": { "message": "No logged chats found" },
+  "noChatsSubMessage": { "message": "Start a chat in Gemini to automatically log it." },
+  
+  "btnRefreshTitle": { "message": "Rescan" },
+  "btnAutoScroll": { "message": "⬆️ Auto-fetch entire history" },
+  "btnSummarize": { "message": "✨ Summarize" },
+  "titleAiSummary": { "message": "✨ AI Summary" },
+  "btnCopy": { "message": "📋 Copy" },
+  
+  "sectionLogSettings": { "message": "Logging Settings" },
+  "labelLoggingMode": { "message": "Logging Mode" },
+  "optLogAll": { "message": "Log All Chats" },
+  "optLogBlacklist": { "message": "Log All Except Blacklist" },
+  "optLogWhitelist": { "message": "Log Whitelist Only" },
+  
+  "sectionApiSettings": { "message": "API Settings (For Summary)" },
+  "labelApiProvider": { "message": "API Provider" },
+  "optApiNone": { "message": "None (Summary OFF)" },
+  "optApiCustom": { "message": "Custom (OpenAI Compatible)" },
+  "labelApiKey": { "message": "API Key" },
+  "labelApiModel": { "message": "Model Name (Blank for default)" },
+  "labelApiEndpoint": { "message": "API Endpoint" },
+  "btnSaveSettings": { "message": "Save Settings" },
+  "btnDeleteAll": { "message": "Delete All Logs" },
+  
+  "untitledChat": { "message": "Untitled Chat" },
+  "itemCount": { "message": " items" },
+  "codeBlock": { "message": "Code Blocks" },
+  
+  "errChatNotFound": { "message": "Chat data not found" },
+  "errDataNotFound": { "message": "Data not found" },
+  "errApiNotConfigured": { "message": "Please configure API settings first" },
+  
+  "toastCopied": { "message": " copied!" },
+  "toastCopyFailed": { "message": "Copy failed" },
+  "toastExported": { "message": " exported" },
+  "toastSummaryCopied": { "message": "Summary copied!" },
+  "toastChatDeleted": { "message": "Chat log deleted" },
+  "toastAllDeleted": { "message": "All logs deleted" },
+  "toastSettingsSaved": { "message": "Settings saved" },
+  "toastSettingsUpdated": { "message": "Settings updated" },
+  "toastRemovedFromList": { "message": "Removed from list" },
+  "toastRescanned": { "message": "Rescanned successfully" },
+  
+  "msgGeneratingSummary": { "message": "Generating summary..." },
+  "msgListEmpty": { "message": "List is empty" },
+  
+  "listLabelWhitelist": { "message": "Whitelist (Logged)" },
+  "listLabelBlacklist": { "message": "Blacklist (Excluded)" },
+  
+  "btnRemove": { "message": "Remove" },
+  "btnStopLogging": { "message": "Stop Logging" },
+  "btnStartLogging": { "message": "Log this Chat" },
+  "btnResumeLogging": { "message": "Resume Logging" },
+  "btnExcludeChat": { "message": "Exclude this Chat" },
+  
+  "badgeRecording": { "message": "Logging" },
+  "badgeUnrecorded": { "message": "Not Logged" },
+  "badgeExcluded": { "message": "Excluded" },
+  
+  "confirmDeleteChat": { "message": "Delete this chat log?" },
+  "confirmDeleteAll": { "message": "Delete all chat logs? This cannot be undone." },
+  "confirmDeleteAllReally": { "message": "Are you sure?" }
+}
