@@ -140,41 +140,42 @@
   // --- Auto Scroll Logic ---
   async function autoScrollToTop() {
     const scroller = document.querySelector('infinite-scroller.chat-history') || document.querySelector('.chat-history') || document.documentElement;
-    showPageToast('🔄 過去の履歴を自動取得中...（完了までこのウィンドウを開いておいてください）');
+    
+    // ★修正: 多言語対応
+    showPageToast(chrome.i18n.getMessage("toastAutoScrollStart"));
     
     let lastHeight = scroller.scrollHeight;
     let retries = 0;
 
-    // ★修正: setInterval から setTimeoutの再帰関数（安全設計）へ変更
     const runScroll = async () => {
-      scroller.scrollTop = 0; // 上へスクロール
-      await new Promise(r => setTimeout(r, 1200)); // 読み込み待機
+      scroller.scrollTop = 0; 
+      await new Promise(r => setTimeout(r, 1200)); 
 
       if (scroller.scrollHeight === lastHeight) {
         retries++;
         if (retries >= 3) {
-          showPageToast('✅ 先頭に到達！時系列順に再構築しています...');
+          // ★修正: 多言語対応
+          showPageToast(chrome.i18n.getMessage("toastAutoScrollReachedTop"));
           
-          // 一度ストレージを空にして、上から順番に完全スキャン
           await GemLogStorage.clearChatMessages(currentChatId);
           processedTurns.clear();
           await scanExistingConversations();
           
-          showPageToast('✨ 完了しました！GemLogポップアップから確認できます。');
+          // ★修正: 多言語対応
+          showPageToast(chrome.i18n.getMessage("toastAutoScrollDone"));
           setTimeout(hidePageToast, 4000);
-          return; // ループを完全に終了
+          return; 
         }
       } else {
         retries = 0;
         lastHeight = scroller.scrollHeight;
-        showPageToast(`🔄 自動取得中... (高さ: ${lastHeight}px)`);
+        // ★修正: 多言語対応
+        showPageToast(chrome.i18n.getMessage("toastAutoScrollProgress") + lastHeight + "px)");
       }
       
-      // 前回の処理が終わってから次のタイマーをセットする (元の1500msの感覚に合わせる)
       setTimeout(runScroll, 300);
     };
 
-    // 初回実行をトリガー
     setTimeout(runScroll, 0);
   }
 
